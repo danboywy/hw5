@@ -1,0 +1,60 @@
+body{
+    background-color:bisque;
+}
+
+#line{
+    height: 100px;
+    min-width: 1080px;
+    background-image:url("../HW5/Scrabble_Board_OneLine.png");
+    background-size: contain; 
+    background-repeat: no-repeat;
+}
+
+
+/*
+.empty_space{
+    
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("Scrabble_Tiles/empty_space.jpg");
+}
+
+.double_letter{
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("Scrabble_Tiles/double_letter.jpg");
+}
+
+
+.double_word{
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("Scrabble_Tiles/double_word.jpg");
+}*/
+
+.holderbackground{
+    margin: auto;
+    width: 640px;
+    height: 182px;
+    background-image: url("../HW5/scrabble-tile-holder-406774_640.png");
+}
+#scrabble-tile-holder{
+    margin-top: 40px;
+    text-align: center;
+}
+.tile{
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
