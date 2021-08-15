@@ -5,7 +5,7 @@ body{
 #line{
     height: 100px;
     min-width: 1080px;
-    background-image:url("../HW5/Scrabble_Board_OneLine.png");
+    background-image:url("Scrabble_Board_OneLine.png");
     background-size: contain; 
     background-repeat: no-repeat;
 }
@@ -45,7 +45,7 @@ body{
     margin: auto;
     width: 640px;
     height: 182px;
-    background-image: url("../HW5/scrabble-tile-holder-406774_640.png");
+    background-image: url("scrabble-tile-holder-406774_640.png");
 }
 #scrabble-tile-holder{
     margin-top: 40px;
