@@ -1,4 +1,8 @@
-//"creator":"Ramon Meza"
+//Haojie Zheng
+//Haojie_zheng@student.uml.edu
+//08/15/2021
+
+
 //change to 100 tiles
 pieces= [
 	{"letter":"A", "value":1, "amount":9},
@@ -28,13 +32,12 @@ pieces= [
 	{"letter":"Y", "value":4, "amount":2},
 	{"letter":"Z", "value":10, "amount":1},
   {"letter":"_", "value": 2,"amount":2}
-]
-
-
+]//"creator":"Ramon Meza"
 
 var drawntile = [];
 var totalscore = 0;
 
+//Start
 $(document).ready(function() {
   //Drop number in holder
   $("#scrabble-tile-holder").droppable();
@@ -42,17 +45,19 @@ $(document).ready(function() {
   set_holder();
 });
 
-// submit word button
+//Submit word button
 $("#next").click(function(){
   next()
   total_score()
 });
+//Reset
 $("#reset").click(function(){
   reset()
   
 });
+
+//Create 15 boxes for one row scrabble.
 function set_15_boxes(){
-  //Create 15 boxes for one row scrabble.
   for (var i = 0; i < 15; i++) {
       $('div#line').append("<div id=empty_space"+i+"></div"); 
   }
@@ -65,7 +70,8 @@ function set_15_boxes(){
       drop: function( event, ui) {
         box_pos = $(this).position();
         //Set auto drop in middle of box
-        $("#"+ui.draggable.attr("id")).css({top: box_pos.top + 20, left: box_pos.left+7, position:'absolute'});
+        //Once the tile is placed on the Scrabble board, it can not be moved
+        $("#"+ui.draggable.attr("id")).draggable("disable").css({top: box_pos.top + 20, left: box_pos.left+7, position:'absolute'});
       }, 
   });
   
@@ -129,13 +135,10 @@ function tile_img(tile_info, tile_number){
     snapTolerance: 5,
     revert: "invalid",
     stop: function(event, ui) {
-      //Once the tile is placed on the Scrabble board, it can not be moved
-      $( '#tile'+tile_number ).draggable( "disable" );
       //Calculate score
       calculate_score();
     }
   })
-  
 }
 
 //Calculate the score
@@ -184,20 +187,22 @@ function tile_is_in_box(tile_pos, box_pos){
 function total_score() {
   $("#score").text();
   totalscore = totalscore + parseInt($("#score").text());
-  $("#total_score").text(totalscore); // accumulate to the total
-  $("#score").text(0); // reset score
+  //Total 
+  $("#total_score").text(totalscore); 
+  //Reset score
+  $("#score").text(0);
 }
 
-
+//Next button
 function next() {
   for(var i in drawntile){
     var tile = $("#tile"+i);
     for (var j = 0; j < 15; j++) {
       var box = $("#empty_space"+j);
-      if (tile_is_in_box(tile.position(), box.position())) { // remove the tile that is in board box
-        // remove the tile
+      //Remove the tile that is in board box
+      if (tile_is_in_box(tile.position(), box.position())) { 
         $("#tile"+i).remove();
-        // replace the tile
+        //Replace the tile
         piece = draw_piece();
         drawntile[i] = piece;
         tile_img(piece, i);
@@ -206,6 +211,7 @@ function next() {
   }
 }
 
+//Reset button
 function reset(){
   window.location.reload(false);
 }
