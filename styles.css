@@ -16,37 +16,6 @@ body{
     background-repeat: no-repeat;
 }
 
-
-/*
-.empty_space{
-    
-    width: 80px;
-    height: 80px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url("Scrabble_Tiles/empty_space.jpg");
-}
-
-.double_letter{
-    width: 80px;
-    height: 80px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url("Scrabble_Tiles/double_letter.jpg");
-}
-
-
-.double_word{
-    width: 80px;
-    height: 80px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url("Scrabble_Tiles/double_word.jpg");
-}*/
-
 .holderbackground{
     margin: auto;
     width: 640px;
