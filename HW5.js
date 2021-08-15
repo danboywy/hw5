@@ -66,7 +66,6 @@ function set_15_boxes(){
         box_pos = $(this).position();
         //Set auto drop in middle of box
         $("#"+ui.draggable.attr("id")).css({top: box_pos.top + 20, left: box_pos.left+7, position:'absolute'});
-        $( '#tile'+tile_number ).draggable( "disable" );
       }, 
   });
   
@@ -130,6 +129,8 @@ function tile_img(tile_info, tile_number){
     snapTolerance: 5,
     revert: "invalid",
     stop: function(event, ui) {
+      //Once the tile is placed on the Scrabble board, it can not be moved
+      $( '#tile'+tile_number ).draggable( "disable" );
       //Calculate score
       calculate_score();
     }
